@@ -1,0 +1,6 @@
+varun_chauhan_resume.pdf
+node_modules/
+dist/
+.env
+.env.*
+!.env.example

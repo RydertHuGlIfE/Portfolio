@@ -1,0 +1,80 @@
+/* Full-screen TTY. Drop next to TerminalView.jsx */
+.tty {
+  --bg: #0a0c0d;
+  --fg: #c8d0d4;
+  --dim: #6b767c;
+  --accent: #1793d1;
+  --ok: #4ade80;
+  --user: #1793d1;
+  --path: #9ccfd8;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: clamp(14px, 3vw, 32px);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-size: clamp(12px, 1.5vw, 15px);
+  line-height: 1.5;
+  text-align: left;
+  letter-spacing: 0;
+  cursor: text;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dim) transparent;
+}
+.tty--matrix    { --bg:#030803; --fg:#9dffa8; --dim:#2f7a3a; --accent:#00ff41; --user:#00ff41; --path:#7dffa0; --ok:#00ff41; }
+.tty--cyberpunk { --bg:#0d0a14; --fg:#e6dff5; --dim:#6a5f85; --accent:#fcee0a; --user:#ff2a6d; --path:#05d9e8; --ok:#fcee0a; }
+.tty--neon      { --bg:#07090f; --fg:#d7e3ff; --dim:#5a6a8f; --accent:#7df9ff; --user:#7df9ff; --path:#c4a7ff; --ok:#7df9ff; }
+
+/* faint CRT scanlines, no glow */
+.tty::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, rgba(255,255,255,0.025) 0, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: overlay;
+}
+
+.tty *, .tty *::before, .tty *::after { box-sizing: border-box; }
+
+.tty-line { white-space: pre-wrap; word-break: break-word; min-height: 1.5em; }
+.tty-bracket { color: var(--fg); }
+.tty-ok { color: var(--ok); font-weight: 600; }
+.tty-skip { margin-top: 1em; color: var(--dim); }
+
+.tty-prompt { white-space: nowrap; }
+.tty-user { color: var(--user); font-weight: 600; }
+.tty-sep { color: var(--dim); }
+.tty-path { color: var(--path); }
+.tty-cmd { color: var(--fg); }
+
+.tty-out {
+  margin: 0 0 0.6em;
+  font: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--fg);
+}
+.tty-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; display: inline-block; margin-bottom: 0.6em; }
+
+.tty-input { display: flex; gap: 0.6ch; align-items: center; }
+.tty-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  caret-color: var(--accent);
+  caret-shape: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tty { animation: tty-on 220ms ease-out; }
+  @keyframes tty-on { from { opacity: 0; } to { opacity: 1; } }
+}
