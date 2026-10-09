@@ -16,7 +16,6 @@ export default function ContactView() {
         <span className="contact-overline">PRIMARY CHANNEL</span>
         <a className="contact-email-link" href="mailto:varunchauhan2001dma@gmail.com">varunchauhan2001dma@gmail.com <span aria-hidden="true">↗</span></a>
         <div className="contact-secondary">
-          <a href="tel:+919412510997"><span>PHONE</span>+91 94125 10997</a>
           <a href="https://github.com/RydertHuGlIfE" target="_blank" rel="noreferrer"><span>GITHUB</span>RydertHuGlIfE ↗</a>
           <a href="https://www.linkedin.com/in/varun-chauhan-174107288/" target="_blank" rel="noreferrer"><span>LINKEDIN</span>Varun Chauhan ↗</a>
         </div>
