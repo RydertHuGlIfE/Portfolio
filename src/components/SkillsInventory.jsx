@@ -209,14 +209,13 @@ export default function SkillsInventory() {
             const on = curGroup === g.gi && (!curSkill || curSkill === it.name);
             const dim = curGroup !== null && !on;
             return (
-              <g key={it.name} className={`st-node ${on ? 'on' : ''} ${dim ? 'dim' : ''} ${isLock(t) ? 'lock' : ''}`} style={{ '--c': g.color, animationDelay: `${260 + g.gi * 70 + i * 40}ms` }} {...bind(t)}>
-                <rect className="st-box" x={SKILL.x} y={it.y - SKILL.h / 2} width={SKILL.w} height={SKILL.h} />
-                <path className="st-tick" d={`M${SKILL.x} ${it.y - SKILL.h / 2 + 8} V${it.y - SKILL.h / 2} H${SKILL.x + 8}`} />
-                <circle cx={SKILL.x} cy={it.y} r={4} fill={g.color} />
-                <text className="st-name" x={SKILL.x + 18} y={it.y + 4}>{it.name}</text>
-                <text className="st-ctx" x={SKILL.x + SKILL.w - 14} y={it.y + 3} textAnchor="end">{it.ctx.toUpperCase()}</text>
-                
-              </g>
+             <g key={it.name} className={`cursor-target st-node ${on ? 'on' : ''} ${dim ? 'dim' : ''} ${isLock(t) ? 'lock' : ''}`} style={{ '--c': g.color, animationDelay: `${260 + g.gi * 70 + i * 40}ms` }} {...bind(t)}>
+  <rect className="st-box" x={SKILL.x} y={it.y - SKILL.h / 2} width={SKILL.w} height={SKILL.h} />
+  <path className="st-tick" d={`M${SKILL.x} ${it.y - SKILL.h / 2 + 8} V${it.y - SKILL.h / 2} H${SKILL.x + 8}`} />
+  <circle cx={SKILL.x} cy={it.y} r={4} fill={g.color} />
+  <text className="st-name" x={SKILL.x + 18} y={it.y + 4}>{it.name}</text>
+  <text className="st-ctx" x={SKILL.x + SKILL.w - 14} y={it.y + 3} textAnchor="end">{it.ctx.toUpperCase()}</text>
+</g>
             );
           }))}
         </svg>
