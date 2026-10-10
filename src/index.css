@@ -31,78 +31,8 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  background-image:
-    radial-gradient(ellipse 70% 55% at 15% 20%, rgba(96, 165, 250, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 80%, rgba(56, 189, 248, 0.14) 0%, transparent 60%),
-    radial-gradient(ellipse 85% 65% at 50% 0%,  rgba(96, 165, 250, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 45% at 50% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
-  background-attachment: fixed;
 }
 
-/* ── Blue-hue ambient orbs ── */
-@keyframes blue-orb-drift {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -20px) scale(1.06);
-  }
-
-  66% {
-    transform: translate(-20px, 25px) scale(0.96);
-  }
-
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-@keyframes blue-orb-drift-alt {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-
-  33% {
-    transform: translate(-25px, 30px) scale(1.04);
-  }
-
-  66% {
-    transform: translate(20px, -15px) scale(0.97);
-  }
-
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-.app-shell::before,
-.app-shell::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(90px);
-}
-
-.app-shell::before {
-  width: 600px;
-  height: 500px;
-  top: -120px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.09) 0%, transparent 70%);
-  animation: blue-orb-drift 18s ease-in-out infinite;
-}
-
-.app-shell::after {
-  width: 500px;
-  height: 450px;
-  bottom: -100px;
-  right: -80px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.07) 0%, transparent 70%);
-  animation: blue-orb-drift-alt 22s ease-in-out infinite;
-}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -125,7 +55,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(96, 165, 250, 0.3);
+  background: rgba(201, 237, 118, 0.3);
   color: #fff;
 }
 
@@ -151,8 +81,7 @@ body {
 }
 
 .glow-on-hover:hover {
-  border-color: rgba(96, 165, 250, 0.4);
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
+  border-color: rgba(201, 237, 118, 0.4);
   transform: translateY(-2px);
 }
 
@@ -3521,13 +3450,10 @@ button {
   fill: color-mix(in srgb, var(--sector-color), transparent 88%);
   stroke: color-mix(in srgb, var(--sector-color), transparent 28%);
   stroke-width: 1.5;
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--sector-color), transparent 86%));
 }
 
 .wheel-sector.is-selected .wheel-sector-tracer {
-  opacity: 0.95;
-  animation: wheel-sector-orbit 2.8s linear infinite;
-  filter: drop-shadow(0 0 5px var(--sector-color));
+  opacity: 0;
 }
 
 .wheel-sector.is-selected line {

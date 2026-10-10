@@ -67,14 +67,11 @@ const CSS = `
 .ct-hub button{margin-top:6px;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(223,230,216,.28);color:#d8dccf;background:rgba(10,13,13,.6);font:clamp(7px,1.1vw,9px) 'IBM Plex Mono',monospace;letter-spacing:.05em;cursor:pointer;transition:border-color .16s,color .16s,background .16s}
 .ct-hub button:hover,.ct-hub button:focus-visible{outline:none;border-color:var(--b);color:var(--b);background:rgba(127,178,238,.1)}
 .ct-hub button.primary{border-color:var(--bd);color:var(--b)}
-.ct-hub::before{content:'';position:absolute;inset:-4%;border-radius:50%;border:1px solid rgba(127,178,238,.4);animation:ct-pulse 2.6s ease-out infinite;pointer-events:none}
-.ct-wheel.open .ct-hub::before{animation:none;opacity:0}
 
 .ct-foot{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;color:#6f786d;font-size:8px;letter-spacing:.05em}
 .ct-foot kbd{padding:2px 5px;border:1px solid rgba(241,238,229,.16);color:#b8bdb0;font:inherit}
 @keyframes ct-arrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes ct-pulse{0%{opacity:.7;transform:scale(.96)}100%{opacity:0;transform:scale(1.22)}}
-@media (prefers-reduced-motion:reduce){.ct-view,.ct-ticks,.ct-hub::before,.ct-sec.sel .runner{animation:none}.ct-sec-open,.ct-opt{transition-duration:.01ms;transition-delay:0s}}
+@media (prefers-reduced-motion:reduce){.ct-view,.ct-ticks,.ct-sec.sel .runner{animation:none}.ct-sec-open,.ct-opt{transition-duration:.01ms;transition-delay:0s}}
 `;
 
 const go = (l) => (l.external ? window.open(l.href, '_blank', 'noreferrer') : (window.location.href = l.href));
