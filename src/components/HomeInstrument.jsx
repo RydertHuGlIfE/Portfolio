@@ -1,21 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
-/*
-  Layout, classes and sizes are untouched. Everything added here is either
-  position: fixed (shader overlay), a transform, or a paint-only effect, so
-  nothing in the page flow can move.
-
-  Added:
-   1. Live WebGL overlay (screen blend, never hides content): contour field,
-      cursor glow, radar sweep and a shockwave from the wheel on selection.
-   2. Wheel tilts in 3D toward the cursor.
-   3. Hub text decodes (scramble) when the selection changes.
-   4. Radar sweep + shockwave ring + slow spinning scale inside the wheel SVG.
-   5. One intro sequence on load.
-   6. Headline/hub font swapped (change FONT below to try another).
-*/
-
 const FONT = "'Chakra Petch', 'Space Grotesk', sans-serif";
 const ACCENT = [0.56, 0.71, 0.91]; // #8fb4e8
 
